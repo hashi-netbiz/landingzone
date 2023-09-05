@@ -1,13 +1,3 @@
-# terraform {
-#   required_providers {
-#     azurerm = {
-#       source  = "hashicorp/azurerm"
-#     }
-#   }
-
-#   required_version = ">= 0.14.9"
-# }
-
 locals {
   resource_group_name = "tcw-${var.environment}-rg"
   aks_cluster_name = "tcw-${var.environment}-aks"

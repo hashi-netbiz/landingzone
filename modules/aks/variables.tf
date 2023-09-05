@@ -3,30 +3,30 @@ variable environment {
   type = string
 }
 
-variable "name" {
-  description = "(Optional) Specifies the name of the AKS cluster.Default value will be tcw-{environment}-aks"
-  type        = string
-}
+# variable "name" {
+#   description = "(Required) Specifies the name of the AKS cluster."
+#   type        = string
+# }
 
-variable "resource_group_name" {
-  description = "(Required) Specifies the name of the resource group."
-  type        = string
-}
+# variable "resource_group_name" {
+#   description = "(Required) Specifies the name of the resource group."
+#   type        = string
+# }
 
-variable "resource_group_id" {
-  description = "(Required) Specifies the resource id of the resource group."
-  type        = string
-}
+# variable "resource_group_id" {
+#   description = "(Required) Specifies the resource id of the resource group."
+#   type        = string
+# }
 
 variable "location" {
   description = "(Required) Specifies the location where the AKS cluster will be deployed."
   type        = string
 }
 
-variable "dns_prefix" {
-  description = "(Optional) DNS prefix specified when creating the managed cluster. Changing this forces a new resource to be created."
-  type        = string
-}
+# variable "dns_prefix" {
+#   description = "(Optional) DNS prefix specified when creating the managed cluster. Changing this forces a new resource to be created."
+#   type        = string
+# }
 
 variable "private_cluster_enabled" {
   description = "Should this Kubernetes Cluster have its API server only exposed on internal IP addresses? This provides a Private IP Address for the Kubernetes API on the Virtual Network where the Kubernetes Cluster is located. Defaults to false. Changing this forces a new resource to be created."
@@ -40,11 +40,11 @@ variable "azure_rbac_enabled" {
   type        = bool
 }
 
-variable "admin_group_object_ids" {
-  description = "(Optional) A list of Object IDs of Azure Active Directory Groups which should have Admin Role on the Cluster."
-  default     = []
-  type        = list(string)
-}
+# variable "admin_group_object_ids" {
+#   description = "(Optional) A list of Object IDs of Azure Active Directory Groups which should have Admin Role on the Cluster."
+#   default     = []
+#   type        = list(string)
+# }
 
 variable "role_based_access_control_enabled" {
   description = "(Required) Is Role Based Access Control Enabled? Changing this forces a new resource to be created."
