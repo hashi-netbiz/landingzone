@@ -4,7 +4,7 @@ locals {
 
 # Generate randon name for the storage account
 resource "random_string" "storage_account_suffix" {
-  length  = 8
+  length  = 6
   special = false
   lower   = true
   upper   = false
@@ -12,7 +12,7 @@ resource "random_string" "storage_account_suffix" {
 }
 
 resource "azurerm_storage_account" "storage_account" {
-  name                ="tcw${var.environment}${random_string.storage_account_suffix.result}"
+  name                ="tcw${var.environment}${random_string.storage_account_suffix.result}sa"
   resource_group_name = local.resource_group_name
 
   location                 = var.location

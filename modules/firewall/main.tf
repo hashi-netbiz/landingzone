@@ -3,7 +3,7 @@ locals {
 }
 
 resource "azurerm_public_ip" "pip" {
-  name                = "tcw-${var.environment}-fw-PublicIp" 
+  name                = "tcw-${var.environment}-fw-pip" 
   resource_group_name = local.resource_group_name
   location            = var.location
   zones               = var.zones
@@ -50,7 +50,7 @@ resource "azurerm_firewall" "firewall" {
 }
 
 resource "azurerm_firewall_policy" "policy" {
-  name                = "tcw-${var.environment}-fwPolicy"
+  name                = "tcw-${var.environment}-fw-policy"
   resource_group_name = local.resource_group_name
   location            = var.location
 

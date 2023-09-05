@@ -13,14 +13,14 @@ locals {
 }
 
 resource "azurerm_private_endpoint" "private_endpoint" {
-  name                = var.name
+  name                = "tcw-${var.environment}-${var.name}-pe"
   location            = var.location
   resource_group_name = local.resource_group_name
   subnet_id           = var.subnet_id
   tags                = var.tags
 
   private_service_connection {
-    name                           = "${var.name}Connection"
+    name                           = "tcw-${var.environment}-${var.name}-conn"
     private_connection_resource_id = var.private_connection_resource_id
     is_manual_connection           = var.is_manual_connection
     subresource_names              = try(["vault"], null)
@@ -28,7 +28,7 @@ resource "azurerm_private_endpoint" "private_endpoint" {
   }
   
   private_dns_zone_group {
-    name                 = "KeyVaultPrivateDnsZoneGroup"
+    name                 = "tcw-${var.environment}-kvpdzg"
     private_dns_zone_ids = var.private_dns_zone_group_ids
   }
 
