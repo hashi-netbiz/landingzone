@@ -8,7 +8,7 @@ resource "azurerm_user_assigned_identity" "aks_identity" {
   location            = var.location
   tags                = var.tags
 
-  name = "${var.name}Identity"
+  name = "tcw-${var.environment}-aks-id"
 
   lifecycle {
     ignore_changes = [
