@@ -77,10 +77,10 @@ resource "azurerm_monitor_diagnostic_setting" "settings" {
     category = "kube-apiserver"
     enabled  = true
 
-    retention_policy {
-      enabled = true  
-      days    = var.log_analytics_retention_days
-    }
+    # retention_policy {
+    #   enabled = true  
+    #   days    = var.log_analytics_retention_days
+    # }
   }
 
   log {
