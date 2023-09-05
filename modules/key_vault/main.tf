@@ -3,7 +3,7 @@ locals {
 }
 
 resource "azurerm_key_vault" "key_vault" {
-  name                            = "tcw-${var.environment}-keyvault-netbiz"
+  name                            = "tcw-${var.environment}-keyvault-net"
   location                        = var.location
   resource_group_name             = local.resource_group_name
   tenant_id                       = var.tenant_id
