@@ -62,7 +62,7 @@ resource "azurerm_firewall_policy" "policy" {
 }
 
 resource "azurerm_firewall_policy_rule_collection_group" "policy" {
-  name               = "AksEgressPolicyRuleCollectionGroup"
+  name               = "AksEgressPolicyRuleCollectionGroupnetbiz"
   firewall_policy_id = azurerm_firewall_policy.policy.id
   priority           = 500
 
