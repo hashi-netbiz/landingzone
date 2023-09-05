@@ -28,11 +28,11 @@ resource "azurerm_user_assigned_identity" "aks_identity" {
 }
 
 resource "azurerm_kubernetes_cluster" "aks_cluster" {
-  name                      = var.name != null? var.name : local.aks_cluster_name
+  name                      = local.aks_cluster_name
   location                  = var.location
   resource_group_name       = local.resource_group_name
   kubernetes_version        = var.kubernetes_version
-  dns_prefix                = var.dns_prefix != null? var.dns_prefix : lower(local.aks_cluster_name)
+  dns_prefix                = local.aks_cluster_name
   automatic_channel_upgrade = var.automatic_channel_upgrade
   sku_tier                  = var.sku_tier
 
@@ -97,68 +97,68 @@ resource "azurerm_monitor_diagnostic_setting" "settings" {
     category = "kube-audit"
     enabled  = true
 
-    retention_policy {
-      enabled = true
-      days    = var.log_analytics_retention_days
-    }
+    # retention_policy {
+    #   enabled = true
+    #   days    = var.log_analytics_retention_days
+    # }
   }
 
   log {
     category = "kube-audit-admin"
     enabled  = true
 
-    retention_policy {
-      enabled = true
-      days    = var.log_analytics_retention_days
-    }
+    # retention_policy {
+    #   enabled = true
+    #   days    = var.log_analytics_retention_days
+    # }
   }
 
   log {
     category = "kube-controller-manager"
     enabled  = true
 
-    retention_policy {
-      enabled = true
-      days    = var.log_analytics_retention_days
-    }
+    # retention_policy {
+    #   enabled = true
+    #   days    = var.log_analytics_retention_days
+    # }
   }
 
   log {
     category = "kube-scheduler"
     enabled  = true
 
-    retention_policy {
-      enabled = true
-      days    = var.log_analytics_retention_days
-    }
+    # retention_policy {
+    #   enabled = true
+    #   days    = var.log_analytics_retention_days
+    # }
   }
 
   log {
     category = "cluster-autoscaler"
     enabled  = true
 
-    retention_policy {
-      enabled = true
-      days    = var.log_analytics_retention_days
-    }
+    # retention_policy {
+    #   enabled = true
+    #   days    = var.log_analytics_retention_days
+    # }
   }
 
   log {
     category = "guard"
     enabled  = true
 
-    retention_policy {
-      enabled = true
-      days    = var.log_analytics_retention_days
-    }
+    # retention_policy {
+    #   enabled = true
+    #   days    = var.log_analytics_retention_days
+    # }
   }
 
   metric {
     category = "AllMetrics"
 
-    retention_policy {
-      enabled = true
-      days    = var.log_analytics_retention_days
-    }
+    # retention_policy {
+    #   enabled = true
+    #   days    = var.log_analytics_retention_days
+    # }
   }
 }
