@@ -4,7 +4,7 @@ locals {
 
 resource "azurerm_private_dns_zone" "private_dns_zone" {
   #name                = var.name
-  name                = "tcw${var.environment}-pdz"
+  name                = "tcw${var.environment}-pdz.azurecr.io"
   resource_group_name = local.resource_group_name
   tags                = var.tags
 
