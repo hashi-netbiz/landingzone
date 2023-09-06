@@ -36,6 +36,10 @@ resource "azurerm_firewall" "firewall" {
     public_ip_address_id = azurerm_public_ip.pip.id
   }
 
+  depends_on = [
+    azurerm_firewall_policy_rule_collection_group.policy
+  ]
+  
   lifecycle {
     ignore_changes = [
       tags,
@@ -43,10 +47,6 @@ resource "azurerm_firewall" "firewall" {
     ]
   }
 
-  depends_on = [
-    azurerm_firewall_policy.policy,
-    azurerm_public_ip.pip
-  ]
 }
 
 resource "azurerm_firewall_policy" "policy" {
