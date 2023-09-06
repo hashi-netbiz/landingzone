@@ -3,10 +3,10 @@ variable environment {
   type = string
 }
 
-# variable "name" {
-#   description = "(Required) Specifies the name of the private dns zone"
-#   type        = string
-# }
+variable "name" {
+  description = "(Required) Specifies the name of the private dns zone"
+  type        = string
+}
 
 # variable "resource_group_name" {
 #   description = "(Required) Specifies the resource group name of the private dns zone"

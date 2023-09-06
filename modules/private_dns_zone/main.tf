@@ -2,9 +2,8 @@ locals {
   resource_group_name = "tcw-${var.environment}-rg"
 }
 
-resource "azurerm_private_dns_zone" "private_dns_zone" {
-  #name                = var.name
-  name                = "tcw${var.environment}-pdz.azurecr.io"
+resource "azurerm_private_dns_zone" "private_dns_zone" {  
+  name                = "tcw-${var.environment}-${var.name}"
   resource_group_name = local.resource_group_name
   tags                = var.tags
 
