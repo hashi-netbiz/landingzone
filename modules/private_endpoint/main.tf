@@ -3,7 +3,7 @@ locals {
 }
 
 resource "azurerm_private_endpoint" "private_endpoint" {
-  name                = "tcw-${var.environment}-${var.name}-pe"
+  name                = "${var.name}-pe"
   location            = var.location
   resource_group_name = local.resource_group_name
   subnet_id           = var.subnet_id
