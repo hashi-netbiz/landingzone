@@ -62,9 +62,9 @@ resource "azurerm_monitor_diagnostic_setting" "settings" {
   metric {
     category = "AllMetrics"
 
-  #   retention_policy {
-  #     enabled = true
-  #     days    = var.log_analytics_retention_days
-  #   }
+    retention_policy {
+      enabled = true
+      days    = var.log_analytics_retention_days
+    }
   }
 }
